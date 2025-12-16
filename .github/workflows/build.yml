@@ -1,4 +1,4 @@
-name: Code Verification
+name: build
 
 on:
   workflow_dispatch:

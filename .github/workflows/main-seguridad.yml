@@ -23,7 +23,7 @@ jobs:
     secrets: inherit
 
   sca:
-    name: Ana+álisis de composición
+    name: Anaálisis de composición
     needs: build
     uses: ./.github/workflows/analisis-composicion.yml
     secrets: inherit

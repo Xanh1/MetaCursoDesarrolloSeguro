@@ -1,10 +1,6 @@
 name: 01 - Main CI / Security Pipeline
 
 on:
-  push:
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
   workflow_dispatch:
 
 permissions:

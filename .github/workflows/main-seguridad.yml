@@ -17,19 +17,19 @@ permissions:
   packages: write
 
 jobs:
-  # ------------------------
-  # Build
-  # ------------------------
   build:
     name: Build
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
-  # ------------------------
-  # Software Composition Analysis
-  # ------------------------
   sca:
-    name: SCA
+    name: Analisis de composicion
     needs: build
     uses: ./.github/workflows/analisis-composicion.yml
+    secrets: inherit
+
+  sast:
+    name: Analisis estatico
+    needs: build
+    uses: ./.github/workflows/analisis-estatico.yml
     secrets: inherit

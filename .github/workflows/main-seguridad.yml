@@ -39,7 +39,7 @@ jobs:
   container-image-scan:
     name: Escaneo de la imagen de Docker
     needs: docker
-    uses: ./.github/workflows/container-image-scan.yml
+    uses: ./.github/workflows/scan-contenedor.yml
     secrets: inherit
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}
@@ -47,7 +47,7 @@ jobs:
   dast:
     name: Test
     needs: docker
-    uses: ./.github/workflows/dast.yml
+    uses: ./.github/workflows/test-dast.yml
     secrets: inherit
     with:
       image-tag: ${{ needs.docker.outputs.image-tag }}

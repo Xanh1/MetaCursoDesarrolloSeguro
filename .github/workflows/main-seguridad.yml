@@ -18,18 +18,18 @@ permissions:
 
 jobs:
   build:
-    name: Build
+    name: Construcción
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
   sca:
-    name: Analisis de composicion
+    name: Ana+álisis de composición
     needs: build
     uses: ./.github/workflows/analisis-composicion.yml
     secrets: inherit
 
   sast:
-    name: Analisis estatico
+    name: Análisis estático
     needs: build
     uses: ./.github/workflows/analisis-estatico.yml
     secrets: inherit

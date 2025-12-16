@@ -1,0 +1,21 @@
+name: 05 - Container Image Scan
+
+on:
+  workflow_call:
+    inputs:
+      image-tag:
+        required: true
+        type: string
+
+jobs:
+  container-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trivy scan
+        uses: aquasecurity/trivy-action@0.24.0
+        with:
+          image-ref: ${{ inputs.image-tag }}
+          format: table
+          exit-code: 0
+          severity: CRITICAL,HIGH

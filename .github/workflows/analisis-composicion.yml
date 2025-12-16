@@ -17,6 +17,8 @@ jobs:
           project: "SCA Analysis"
           path: "."
           format: "ALL"
+          args: >
+            --disableCentral
 
       - name: Upload SCA report
         uses: actions/upload-artifact@v4

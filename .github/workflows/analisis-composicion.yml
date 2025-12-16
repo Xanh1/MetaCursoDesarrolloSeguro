@@ -1,0 +1,25 @@
+name: 02 Analisis - SCA
+
+on:
+  workflow_call:
+
+jobs:
+  sca:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Dependency Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: "SCA Analysis"
+          path: "."
+          format: "ALL"
+
+      - name: Upload SCA report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sca-report
+          path: reports
